@@ -1,4 +1,15 @@
-// Mensaje que aparece en la consola cuando se carga la página
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('¡Bienvenido a mi blog!');
+  const buttons = document.querySelectorAll('.btn-like');
+
+  buttons.forEach(button => {
+    let count = 0;
+    const span = button.querySelector('span');
+
+    button.addEventListener('click', () => {
+      count++;
+      span.textContent = count;
+    });
+  });
+
+  console.log('Web cargada correctamente 🚀');
 });
