@@ -1,43 +1,147 @@
-/* Aspecto general */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* Cabecera */
-header {
-  background-color: #db5f5f;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+/* Variables */
+:root {
+  --primary: #b73c3c;
+  --dark: #222;
+  --light: #f5f5f5;
+  --gray: #777;
 }
 
-/* Navegación */
-nav ul {
+/* General */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
+.header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  color: var(--primary);
+  font-size: 1.8rem;
+}
+
+.nav ul {
   list-style: none;
-  margin: 0;
-  padding: 1;
-}
-nav li {
-  display: inline-block;
-  margin-right: 10px;
-}
-nav a {
-  color: #fff;
-  text-decoration: none;
+  display: flex;
 }
 
-/* Contenido principal */
-main {
+.nav li {
+  margin-left: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.nav a.active,
+.nav a:hover {
+  color: var(--primary);
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(to right, #b73c3c, #7a2323);
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+/* Main */
+.main-content {
+  margin: 40px auto;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* Post */
+.post {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+}
+
+.post img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.post-content {
   padding: 20px;
 }
 
-/* Pie de página */
-footer {
-  background-color: #551414;
+.post h3 {
+  margin-bottom: 10px;
+}
+
+.meta {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* Botón */
+.btn-like {
+  margin-top: 10px;
+  background: var(--primary);
   color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-like:hover {
+  background: #8f2e2e;
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  color: #ccc;
+  padding: 25px 0;
   text-align: center;
-  padding: 10px;
+  margin-top: 40px;
 }
